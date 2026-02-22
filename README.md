@@ -27,7 +27,6 @@ Check driver:
 
 ```
 nvidia-smi
-
 ```
 
 ---
@@ -45,7 +44,6 @@ Start server:
 
 ```
 nix run github:vmemjp/ollama-cuda-flake -- serve
-
 ```
 
 ---
@@ -54,13 +52,11 @@ nix run github:vmemjp/ollama-cuda-flake -- serve
 
 ```
 nix profile install github:vmemjp/ollama-cuda-flake
-
 ```
 Remove:
 
 ```
 nix profile remove github:vmemjp/ollama-cuda-flake
-
 ```
 
 ---
@@ -133,7 +129,6 @@ You may also specify multiple architectures:
 
 ```
 86;89
-
 ```
 
 ---
@@ -147,7 +142,6 @@ You may also specify multiple architectures:
 
 ```
 OLLAMA_DEBUG=1 ollama serve
-
 ```
 
 ### Build fails on non-SM_89 GPUs
@@ -182,5 +176,5 @@ Ollama is MIT licensed.
 See upstream repository:
 
 https://github.com/ollama/ollama
-```
+
 
