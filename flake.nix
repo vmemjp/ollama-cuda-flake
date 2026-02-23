@@ -11,7 +11,6 @@
       pkgs = import nixpkgs {
         inherit system;
         config = {
-          # nixpkgs 側で cudaPackages を使うために必要になることが多い
           allowUnfree = true;
           cudaSupport = true;
         };
@@ -61,7 +60,6 @@
           cudaPath = lib.removeSuffix "-${cudaMajorVersion}" cudaToolkit;
 
           wrapperArgs = builtins.concatStringsSep " " ([
-            # embedded runners が GPU lib を見つけるため
             "--suffix LD_LIBRARY_PATH : '${addDriverRunpath.driverLink}/lib'"
             "--suffix LD_LIBRARY_PATH : '${lib.makeLibraryPath (map lib.getLib cudaLibs)}'"
           ]);
@@ -79,7 +77,6 @@
             hash = "sha256-dW3+9JCKB+/9D2FY7pzv9lA9KDtyOydog3vUFLndjWA=";
           };
 
-          # ここは一度ビルドして “got:” を貼る（手順は下）
           vendorHash = "sha256-Lc1Ktdqtv2VhJQssk8K1UOimeEjVNvDWePE9WkamCos=";
 
           proxyVendor = true;
@@ -105,7 +102,6 @@
           '';
 
           overrideModAttrs = (_final: _prev: {
-            # module fetch phase で llama.cpp 側ビルドを走らせない（元の式踏襲）
             preBuild = "";
           });
 
