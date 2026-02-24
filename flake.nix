@@ -68,13 +68,13 @@
         in
         goBuild (finalAttrs: {
           pname = "ollama";
-          version = "0.16.3";
+          version = "0.17.0";
 
           src = fetchFromGitHub {
             owner = "ollama";
             repo = "ollama";
-            rev = "9d02d1d767b075221031be19ad9695f1259b3519";
-            hash = "sha256-dW3+9JCKB+/9D2FY7pzv9lA9KDtyOydog3vUFLndjWA=";
+            rev = "06edabdde1174bd31c1d93f3d9e5efc2d9504806";
+            hash = "sha256-bBoLUcWVsYxtwjJaa1hYTzodRSIT0yoF0raGItPLjR4=";
           };
 
           vendorHash = "sha256-Lc1Ktdqtv2VhJQssk8K1UOimeEjVNvDWePE9WkamCos=";
