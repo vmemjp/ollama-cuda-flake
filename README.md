@@ -1,6 +1,6 @@
 # Ollama CUDA (SM_89) — Nix Flake
 
-A Nix flake that builds [Ollama v0.17.0](https://github.com/ollama/ollama/releases/tag/v0.17.0) from source with CUDA support, optimized for SM_89 (RTX 40-series) GPUs on x86_64 Linux.
+A Nix flake that builds [Ollama v0.17.4](https://github.com/ollama/ollama/releases/tag/v0.17.4) from source with CUDA support, optimized for SM_89 (RTX 40-series) GPUs on x86_64 Linux.
 
 ---
 
