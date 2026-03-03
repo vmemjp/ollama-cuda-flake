@@ -50,6 +50,13 @@ nix run github:vmemjp/ollama-cuda-flake -- serve
 ```
 nix profile install github:vmemjp/ollama-cuda-flake
 ```
+Update to a new version:
+
+```
+nix profile remove ollama
+nix profile install github:vmemjp/ollama-cuda-flake
+```
+
 Remove:
 
 ```
