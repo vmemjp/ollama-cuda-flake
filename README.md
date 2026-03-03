@@ -48,13 +48,13 @@ nix run github:vmemjp/ollama-cuda-flake -- serve
 ## 📦 Install to Profile (Optional)
 
 ```
-nix profile install github:vmemjp/ollama-cuda-flake
+nix profile add github:vmemjp/ollama-cuda-flake
 ```
 Update to a new version:
 
 ```
 nix profile remove ollama
-nix profile install github:vmemjp/ollama-cuda-flake
+nix profile add github:vmemjp/ollama-cuda-flake
 ```
 
 Remove:
