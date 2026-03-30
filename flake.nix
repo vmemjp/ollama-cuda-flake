@@ -68,13 +68,13 @@
         in
         goBuild (finalAttrs: {
           pname = "ollama";
-          version = "0.18.2";
+          version = "0.19.0";
 
           src = fetchFromGitHub {
             owner = "ollama";
             repo = "ollama";
-            rev = "5759c2d2d20bc3193e4520f4a6af42545dbbc104";
-            hash = "sha256-BDCYczTZO6LKwD8+LY625pZwvJVMYUE0VwVG5pVYfGk=";
+            rev = "31f968fe1f0f774fe20ee0c64f749e90d54147fd";
+            hash = "sha256-hfiEj2aTt/96Mou5BiWiSXpLEjglpTX+iqL3EnO3iJ8=";
           };
 
           vendorHash = "sha256-Lc1Ktdqtv2VhJQssk8K1UOimeEjVNvDWePE9WkamCos=";
@@ -122,6 +122,9 @@
           postFixup = ''
             wrapProgram "$out/bin/ollama" ${wrapperArgs}
           '';
+
+          # Pi/OpenClaw tests need network & PATH access unavailable in Nix sandbox
+          excludedPackages = [ "cmd/launch" ];
 
           ldflags = [
             "-X=github.com/ollama/ollama/version.Version=${finalAttrs.version}"
